@@ -2,17 +2,17 @@
 #include "beat.h"
 #include "const.h"
 
-class LeftBat : public Bat {
+class RighBat : public Bat {
 public:
-    LeftBat(float startx, float starty) :Bat(startx, starty) {
+    RighBat(float startx, float starty) :Bat(startx, starty) {
         rect.setPosition(startx, starty);
     }
     void update() {
         int currentx = rect.getPosition().x;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
             rect.move(0, -speedy);
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
             rect.move(0, speedy);
         }
         if (rect.getPosition().y <= 0) {

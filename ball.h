@@ -3,15 +3,20 @@
 class Ball {
 private:
 	sf::CircleShape circle;
+	sf::FloatRect hitbox;
 	float radius = 20.f;
 	float speedx = 2.5f;
 	float speedy = -2.5f;
+	size_t left_score = 0;
+	size_t righ_score = 0;
 public:
 	Ball();
 	sf::CircleShape getShape();
-	float getSpeedx();
-	float getSpeedy();
 	sf::Vector2f getPosition();
 	void update();
-
+	sf::FloatRect getHitBox();
+	void reboundHorizontal();
+	void reboundVertical();
+	rsize_t getLeftScore();
+	rsize_t getRighScore();
 };
